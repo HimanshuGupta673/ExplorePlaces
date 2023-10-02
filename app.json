@@ -20,8 +20,10 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#ffffff",
+        "package":"com.himanshu.findplaces"
+      },
+      "googleMaps":"AIzaSyAqCtev9lFvA3Q5cg8Ylv9ph7qf-_ci86A"
     },
     "web": {
       "favicon": "./assets/favicon.png"
