@@ -25,7 +25,7 @@ export default function App() {
   }, []);
   const [fontsLoaded] = useFonts({
     'raleway': require('./assets/fonts/Raleway-Regular.ttf'),
-    'raleway': require('./assets/fonts/Raleway-SemiBold.ttf'),
+    'raleway-bold': require('./assets/fonts/Raleway-SemiBold.ttf'),
   });
   return (
     <View style={styles.container}>
