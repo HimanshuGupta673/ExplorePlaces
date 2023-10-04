@@ -3,14 +3,14 @@ import React from 'react'
 import { FlatList } from 'react-native'
 import PlaceItem from './PlaceItem'
 import PlaceItemBig from './PlaceItemBig'
-// import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
 
 export default function PlaceList({placeList}) {
 
-//   const navigator=useNavigation();
-//   const onPlaceClick=(item)=>{
-//     navigator.navigate('place-detail',{place:item}); 
-//   }
+  const navigator=useNavigation();
+  const onPlaceClick=(item)=>{
+    navigator.navigate('place-detail',{place:item}); 
+  }
   return (
     <View style={{marginBottom:30}}>
     
@@ -21,7 +21,7 @@ export default function PlaceList({placeList}) {
       <FlatList
       data={placeList}
       renderItem={({item,index})=>(
-        <TouchableOpacity key={index} >
+        <TouchableOpacity key={index} onPress={()=>onPlaceClick(item)}>
             {index%4==0?
             <PlaceItemBig place={item} />
             :<PlaceItem place={item} />}

@@ -10,11 +10,11 @@ import {results} from './data'
 export default function Home() {
   const [placeList,setPlaceList] = useState([]);
   useEffect(()=>{
-    // GetNearBySearchPlace();
+    // GetNearBySearchPlace('restaurant');
     setPlaceList(results)
   },[])
-  // const GetNearBySearchPlace = () =>{
-  //   GlobalApi.nearByPlace().then(resp=>{
+  // const GetNearBySearchPlace = (value) =>{
+  //   GlobalApi.nearByPlace(location.coords.latitude,location.coords.longitude,value).then(resp=>{
   //     setPlaceList(resp.data.results);
   //   })
   // }
@@ -23,8 +23,9 @@ export default function Home() {
       <SafeAreaView>
 
       <Header/>
-      <GoogleMapView/>
-      <CategoryList/>
+      <GoogleMapView placeList={placeList}/>
+      {/* <CategoryList setSelectedCategory={(value)=>GetNearBySearchPlace(value)}/> */}
+      <CategoryList />
       {placeList?<PlaceList placeList={placeList}/>:null}
       </SafeAreaView>
     </ScrollView>
