@@ -8,8 +8,8 @@ import GoogleMapView from '../Home/GoogleMapView';
 import { TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native';
-// import Share from '../../Services/Share';
-export default function PlaceDetailItem({place}) {  
+import Share from '../../Services/Share';
+export default function PlaceDetailItem({place,onDirectionClick}) {  
   return (
     <ScrollView style={{backgroundColor:'#fff',flex:1}}>
     <SafeAreaView>
@@ -66,7 +66,7 @@ export default function PlaceDetailItem({place}) {
         <View style={{marginTop:10,flexDirection:'row',
     display:'flex', gap:10}}>
         <TouchableOpacity
-        //  onPress={()=>onDirectionClick()}
+         onPress={()=>onDirectionClick()}
           style={{
             direction: "flex",
             flexDirection: "row",
@@ -83,7 +83,7 @@ export default function PlaceDetailItem({place}) {
           <Text style={{ fontFamily: "raleway", fontSize: 16 }}>Direction</Text>
         </TouchableOpacity>
         <TouchableOpacity
-        //  onPress={()=>Share.SharePlace(place)}
+         onPress={()=>Share.SharePlace(place)}
           style={{
             direction: "flex",
             flexDirection: "row",
